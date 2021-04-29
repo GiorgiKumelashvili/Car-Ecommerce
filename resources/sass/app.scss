@@ -7,54 +7,19 @@
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
 
-//! Important ones
+// My addition
+@import "spacing";
+@import "utils";
+
 body {
     background-color: white;
 }
 
-.spacer {
-    letter-spacing: 3px;
-}
-
-.px-middle {
-    padding-left: 13rem;
-    padding-right: 13rem;
-}
-
-.p-middle {
-    padding: 6rem;
-}
-
-.mx-middle {
-    margin-left: 6rem;
-    margin-right: 6rem;
-}
-
-.custom-px-middle {
-    padding-right: 6rem;
-    padding-left: 6rem;
-}
-
-.middle-white {
-    color: rgba(255, 255, 255, 0.7) !important;
-}
-
-$url: "https://wallpaperaccess.com/full/1554626.jpg";
-$url: "https://images.unsplash.com/photo-1567818668259-e66acac21610?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=621&q=80";
-$url: "https://www.wallpaperup.com/uploads/wallpapers/2014/02/21/264153/73a360c68042ae98f65d8a49936ea78c-700.jpg";
-$url: "https://themobilewallpaper.com/uploads/blog_images/Devices-iPhone-6s-mobile-tablet-HD-Wallpaper-1596971304.jpg";
-$url: "https://wallpapercave.com/wp/XMgT2G3.jpg";
-//$url: "https://images.unsplash.com/photo-1606590526474-b07bb3623ad1?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80";
-
 .custom-bg-img {
-    background-image: url($url);
+    background-image: url($big-image-url);
     height: 600px;
     background-repeat: no-repeat;
-    //background-position: center;
     background-size: cover;
-    //background-size: contain;
-    //background-position: 60%;
-    //filter: grayscale(80%) !important;
 }
 
 .card-img-overlay {
@@ -62,24 +27,11 @@ $url: "https://wallpapercave.com/wp/XMgT2G3.jpg";
             to right,
             rgba(0, 0, 0, 0.95) 40%,
             rgba(0, 0, 0, 0.8),
-            rgba(0, 0, 0, 0.7),
-            rgba(0, 0, 0, 0.5)
+            rgba(0, 0, 0, 0.2),
+            rgba(0, 0, 0, 0.1)
     );
 }
 
 .custom-rounder-img {
     border-radius: 3rem !important;
-}
-
-.quad-rounded {
-    border-radius: .9rem !important;
-}
-
-.quad-rounded-2 {
-    border-radius: 1.2rem !important;
-}
-
-.custom-floating-card {
-    position: relative;
-    top: -2.5rem;
 }

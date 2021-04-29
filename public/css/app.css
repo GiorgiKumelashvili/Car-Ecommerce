@@ -10002,46 +10002,30 @@ h3 {
     border-color: #dee2e6;
   }
 }
-body {
-  background-color: white;
+.p-middle {
+  padding: 6rem;
+}
+
+.p-high {
+  padding: 13rem;
+}
+
+.px-middle {
+  padding-left: 6rem;
+  padding-right: 6rem;
+}
+
+.px-high {
+  padding-left: 13rem;
+  padding-right: 13rem;
 }
 
 .spacer {
   letter-spacing: 3px;
 }
 
-.px-middle {
-  padding-left: 13rem;
-  padding-right: 13rem;
-}
-
-.p-middle {
-  padding: 6rem;
-}
-
-.mx-middle {
-  margin-left: 6rem;
-  margin-right: 6rem;
-}
-
-.custom-px-middle {
-  padding-right: 6rem;
-  padding-left: 6rem;
-}
-
-.middle-white {
+.white-7 {
   color: rgba(255, 255, 255, 0.7) !important;
-}
-
-.custom-bg-img {
-  background-image: url("https://wallpapercave.com/wp/XMgT2G3.jpg");
-  height: 600px;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
-.card-img-overlay {
-  background: linear-gradient(to right, rgba(0, 0, 0, 0.95) 40%, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5));
 }
 
 .custom-rounder-img {
@@ -10052,11 +10036,21 @@ body {
   border-radius: 0.9rem !important;
 }
 
-.quad-rounded-2 {
-  border-radius: 1.2rem !important;
+body {
+  background-color: white;
 }
 
-.custom-floating-card {
-  position: relative;
-  top: -2.5rem;
+.custom-bg-img {
+  background-image: url("https://wallpaperaccess.com/full/1554626.jpg");
+  height: 600px;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.card-img-overlay {
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.95) 40%, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.1));
+}
+
+.custom-rounder-img {
+  border-radius: 3rem !important;
 }

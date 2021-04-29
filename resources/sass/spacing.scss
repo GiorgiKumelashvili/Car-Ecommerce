@@ -1,0 +1,23 @@
+@import "variables";
+
+.p-middle {
+    padding: $middle;
+}
+
+.p-high {
+    padding: $high;
+}
+
+.px-middle {
+    padding-left: $middle;
+    padding-right: $middle;
+}
+
+.px-high {
+    padding-left: $high;
+    padding-right: $high;
+}
+
+
+
+

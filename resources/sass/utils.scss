@@ -1,0 +1,17 @@
+@import "variables";
+
+.spacer {
+    letter-spacing: 3px;
+}
+
+.white-7 {
+    color: rgba(255, 255, 255, 0.7) !important;
+}
+
+.custom-rounder-img {
+    border-radius: $img-border-radius !important;
+}
+
+.quad-rounded {
+    border-radius: $quad-border-radius !important;
+}
