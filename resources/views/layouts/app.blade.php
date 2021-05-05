@@ -34,16 +34,16 @@
             <div class="collapse navbar-collapse d-flex" id="navbarSupportedContent">
                 <!-- Left Side Of Navbar -->
                 <ul class="navbar-nav text-center flex-grow-1 justify-content-center font-weight-bold">
-                    <li class="nav-item active">
+                    <li class="nav-item {{ request()->routeIs('home') ? 'active' : '' }}">
                         <a class="nav-link" href="{{ route('home') }}">{{ __('Home') }}</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="">{{ __('Car Catalogue') }}</a>
+                    <li class="nav-item {{ request()->routeIs('carCatalogue') ? 'active' : '' }}">
+                        <a class="nav-link" href="{{route('carCatalogue')}}">{{ __('Car Catalogue') }}</a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item {{ request()->routeIs('Contact Us') ? 'active' : '' }}">
                         <a class="nav-link" href="">{{ __('Contact Us') }}</a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item {{ request()->routeIs('Help') ? 'active' : '' }}">
                         <a class="nav-link" href="">{{ __('Help') }}</a>
                     </li>
                 </ul>
@@ -110,5 +110,30 @@
             @yield('content')
         </main>
     </div>
+
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.4.3/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/8.4.3/firebase-analytics.js"></script>
+
+    <script>
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        var firebaseConfig = {
+            apiKey: "AIzaSyDPEM5VInlxFQXF2KylJ6iX1F-BujlJPY8",
+            authDomain: "car-ecommerce.firebaseapp.com",
+            projectId: "car-ecommerce",
+            storageBucket: "car-ecommerce.appspot.com",
+            messagingSenderId: "791729049608",
+            appId: "1:791729049608:web:e5d30023d42daa81a5c1bd",
+            measurementId: "G-L8CQW4QLSY"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        firebase.analytics();
+    </script>
 </body>
 </html>

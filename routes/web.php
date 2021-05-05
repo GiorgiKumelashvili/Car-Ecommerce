@@ -6,10 +6,10 @@ use Illuminate\Support\Facades\Route;
 
 Auth::routes();
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/car_catalogue', [App\Http\Controllers\HomeController::class, 'carCatalogue'])->name('carCatalogue');
+Route::get('/car_detailed_view/{id}', [App\Http\Controllers\HomeController::class, 'carDetailedView'])->name('carDetailedView');
 
-Route::post('/', function (\Illuminate\Http\Request $request) {
-    return $request->all();
-});
+
 /*
  * em: gio@gio.com
  * ps: giusha123
