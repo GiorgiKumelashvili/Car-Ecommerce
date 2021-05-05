@@ -73,33 +73,32 @@
 
             <div class="row">
                 @for ($i = 0; $i < 6; $i++)
-                    <div class="col-12 col-md-3 pt-5">
-                        <div class="card quad-rounded-less p-3 shadow-sm">
-                            <h4 class="card-title font-weight-bold py-3 pt-0 pb-2">Tesla model {{$i}}</h4>
+                    <div class="col-12 col-md-3">
+                        <div class="card quad-rounded mt-5 shadow-sm">
+                            <h4 class="card-title font-weight-bold text-center m-0 py-4 px-4 text-truncate">
+                                MERCEDES-BENZ E 350 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+                            </h4>
 
                             <img
-                                src="https://www.cstatic-images.com/car-pictures/main/USC80TSC032A021001.png"
+                                src="https://firebasestorage.googleapis.com/v0/b/car-ecommerce.appspot.com/o/52072612-1-large.jpg?alt=media"
                                 class="card-img-top"
-                                alt="..."
+                                alt="mercedes"
                             >
-
-                            <div class="card-body pb-0">
+                            <div class="card-body">
                                 <div class="card-text d-flex justify-content-between">
                                     <p>Starting Price</p>
                                     <p class="font-weight-bold">$ 35,000</p>
                                 </div>
                                 <div class="card-text d-flex justify-content-between">
-                                    <p>Type</p>
-                                    <p class="font-weight-bold">Sedan</p>
+                                    <p>distance</p>
+                                    <p class="font-weight-bold">185600 კმ</p>
                                 </div>
-
 
                                 <a href="{{route('carDetailedView', ['id' => $i])}}" class="card-link text-white">
                                     <button class="btn btn-primary d-block quad-rounded-less mt-4">
                                         Detailed Review
                                     </button>
                                 </a>
-
                             </div>
                         </div>
                     </div>

@@ -157,7 +157,7 @@
                     {{-- Right side--}}
                     <div class="col-md-8 pt-3 px-3 pb-2 d-flex flex-column justify-content-between">
                         <div class="row">
-                            <div class="col-10 d-flex align-items-center">
+                            <div class="col-8 d-flex align-items-center">
                                 <svg class="bi bi-person-circle"
                                      xmlns="http://www.w3.org/2000/svg"
                                      width="24"
@@ -175,44 +175,45 @@
                                 </h5>
                             </div>
 
-                            <div class="col-2 card-text align-self-center">
+                            <div class="col-4 card-text d-flex align-self-center justify-content-end">
                                 ID {{$id}}
                             </div>
                         </div>
 
                         <div class="row">
-                            <div
-                                class="col-4 card-text border p-2 quad-rounded-less d-flex align-items-center"
-                                style="color: #2fa360"
-                            >
-                                <svg class="bi bi-telephone-fill mr-2"
-                                     xmlns="http://www.w3.org/2000/svg"
-                                     width="20"
-                                     height="20"
-                                     fill="currentColor"
-                                     viewBox="0 0 16 16"
-                                >
-                                    <path fill-rule="evenodd"
-                                          d="M1.885.511a1.745 1.745 0 0 1 2.61.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z"/>
-                                </svg>
+                            <div class="col-5">
+                                <div class="card-text border p-2 quad-rounded-less d-flex align-items-center" style="color: #2fa360">
+                                    <svg class="bi bi-telephone-fill mr-2"
+                                         xmlns="http://www.w3.org/2000/svg"
+                                         width="20"
+                                         height="20"
+                                         fill="currentColor"
+                                         viewBox="0 0 16 16"
+                                    >
+                                        <path fill-rule="evenodd"
+                                              d="M1.885.511a1.745 1.745 0 0 1 2.61.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z"/>
+                                    </svg>
 
-                                599 71 80 30
+                                    599 71 80 30
+                                </div>
                             </div>
 
-                            <div class="col-3 card-text border p-2 quad-rounded-less d-flex align-items-center ml-2">
-                                <svg class="bi bi-geo-alt mr-2"
-                                     xmlns="http://www.w3.org/2000/svg"
-                                     width="20"
-                                     height="20"
-                                     fill="currentColor"
-                                     viewBox="0 0 16 16"
-                                >
-                                    <path
-                                        d="M12.166 8.94c-.524 1.062-1.234 2.12-1.96 3.07A31.493 31.493 0 0 1 8 14.58a31.481 31.481 0 0 1-2.206-2.57c-.726-.95-1.436-2.008-1.96-3.07C3.304 7.867 3 6.862 3 6a5 5 0 0 1 10 0c0 .862-.305 1.867-.834 2.94zM8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10z"/>
-                                    <path d="M8 8a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm0 1a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
-                                </svg>
+                            <div class="col-4 pl-0">
+                                <div class="card-text border p-2 quad-rounded-less d-flex align-items-center">
+                                    <svg class="bi bi-geo-alt mr-2"
+                                         xmlns="http://www.w3.org/2000/svg"
+                                         width="20"
+                                         height="20"
+                                         fill="currentColor"
+                                         viewBox="0 0 16 16"
+                                    >
+                                        <path
+                                            d="M12.166 8.94c-.524 1.062-1.234 2.12-1.96 3.07A31.493 31.493 0 0 1 8 14.58a31.481 31.481 0 0 1-2.206-2.57c-.726-.95-1.436-2.008-1.96-3.07C3.304 7.867 3 6.862 3 6a5 5 0 0 1 10 0c0 .862-.305 1.867-.834 2.94zM8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10z"/>
+                                        <path d="M8 8a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm0 1a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+                                    </svg>
 
-                                თბილისი
+                                    თბილისი
+                                </div>
                             </div>
                         </div>
                     </div>

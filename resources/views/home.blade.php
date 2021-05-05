@@ -97,69 +97,33 @@
             </h5>
 
 
-            <div class="card quad-rounded p-3 mt-5 shadow-sm" style="width: 20rem">
-                <h4 class="card-title font-weight-bold py-3 pt-0 pb-2">Tesla model 3</h4>
+            <div class="card quad-rounded mt-5 shadow-sm" style="width: 20rem">
+                <h4 class="card-title font-weight-bold text-center m-0 py-4 px-4 text-truncate">
+                    MERCEDES-BENZ E 350
+                </h4>
 
                 <img
-                    src="https://www.cstatic-images.com/car-pictures/main/USC80TSC032A021001.png"
+                    src="https://firebasestorage.googleapis.com/v0/b/car-ecommerce.appspot.com/o/52072612-1-large.jpg?alt=media"
                     class="card-img-top"
-                    alt="..."
+                    alt="mercedes"
                 >
-                <div class="card-body pb-0">
+                <div class="card-body">
                     <div class="card-text d-flex justify-content-between">
                         <p>Starting Price</p>
                         <p class="font-weight-bold">$ 35,000</p>
                     </div>
                     <div class="card-text d-flex justify-content-between">
-                        <p>Type</p>
-                        <p class="font-weight-bold">Sedan</p>
-                    </div>
-                    <div class="card-text d-flex justify-content-between">
-                        <p>Review</p>
-                        <p class="d-flex align-items-center font-weight-bold">
-                            4.5
-
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                width="16"
-                                height="16"
-                                fill="#FEBC2E"
-                                class="bi bi-star-fill ml-2 text-warning"
-                                viewBox="0 0 16 16"
-                            >
-                                <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
-                            </svg>
-                        </p>
+                        <p>distance</p>
+                        <p class="font-weight-bold">185600 კმ</p>
                     </div>
 
-
-                    <button class="btn btn-primary d-block quad-rounded-less mt-4">
-                        <a href="{{route('carDetailedView', ['id' => '001'])}}" class="card-link text-white">
+                    <a href="{{route('carDetailedView', ['id' => '001'])}}" class="card-link text-white">
+                        <button class="btn btn-primary d-block quad-rounded-less mt-4">
                             Detailed Review
-                        </a>
-                    </button>
-
+                        </button>
+                    </a>
                 </div>
             </div>
-
-            {{--            <div class="row">--}}
-            {{--                @for ($i = 0; $i < 6; $i++)--}}
-            {{--                    <div class="col-12 col-md-3 pt-5">--}}
-            {{--                        <div class="card" style="width: 18rem;">--}}
-            {{--                            <div class="card-body">--}}
-            {{--                                <h5 class="card-title">Card {{$i}}</h5>--}}
-            {{--                                <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>--}}
-            {{--                                <p class="card-text">--}}
-            {{--                                    Some quick example text to build on the card title and make up the bulk--}}
-            {{--                                    of the card's content.--}}
-            {{--                                </p>--}}
-            {{--                                <a href="#" class="card-link">Card link</a>--}}
-            {{--                                <a href="#" class="card-link">Another link</a>--}}
-            {{--                            </div>--}}
-            {{--                        </div>--}}
-            {{--                    </div>--}}
-            {{--                @endfor--}}
-            {{--            </div>--}}
         </div>
     </div>
 @endsection
