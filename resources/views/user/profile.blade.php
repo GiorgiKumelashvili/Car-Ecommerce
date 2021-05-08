@@ -9,13 +9,12 @@
 
         .list-group-item:hover:not(.list-group-item:first-child) {
             background-color: rgba(0, 0, 0, 0.3);
-            color: white;
             box-shadow: 0 0 0 3px white;
             border-radius: 5px;
             font-weight: bold;
         }
 
-        .logout-link:hover a {
+        .list-group-item:hover:not(.list-group-item:first-child) a{
             color: white !important;
         }
 
@@ -29,7 +28,7 @@
                 <div class="col-3">
                     <div class="bg-light quad-rounded-less shadow">
                         <ul class="list-group quad-rounded-less pointer">
-                            <li class="list-group-item border-0">
+                            <li class="list-group-item logout-link border-0">
                                 <div class="d-flex">
                                     <div class="d-flex align-items-center">
                                         <svg class="bi bi-person-circle text-info"
@@ -56,12 +55,32 @@
                                     </div>
                                 </div>
                             </li>
-                            <li class="list-group-item border-0">{{__('ჩემი განცხადებები')}}</li>
-                            <li class="list-group-item border-0">{{__('შენახული მანქანები')}}</li>
-                            <li class="list-group-item border-0">{{__('ფეივორიტები')}}</li>
-                            <li class="list-group-item border-0">{{__('ჩემი წერილები')}}</li>
-                            <li class="list-group-item border-0">{{__('ბალანსის შევსება')}}</li>
-                            <li class="list-group-item border-0 d-flex align-items-center logout-link">
+                            <li class="list-group-item logout-link border-0">
+                                <a href="" class="text-decoration-none text-dark">
+                                    {{__('ჩემი განცხადებები')}}
+                                </a>
+                            </li>
+                            <li class="list-group-item logout-link border-0">
+                                <a href="" class="text-decoration-none text-dark">
+                                    {{__('შენახული მანქანები')}}
+                                </a>
+                            </li>
+                            <li class="list-group-item logout-link border-0">
+                                <a href="" class="text-decoration-none text-dark">
+                                    {{__('ფეივორიტები')}}
+                                </a>
+                            </li>
+                            <li class="list-group-item logout-link border-0">
+                                <a href="" class="text-decoration-none text-dark">
+                                    {{__('ჩემი წერილები')}}
+                                </a>
+                            </li>
+                            <li class="list-group-item logout-link border-0">
+                                <a href="" class="text-decoration-none text-dark">
+                                    {{__('ბალანსის შევსება')}}
+                                </a>
+                            </li>
+                            <li class="list-group-item border-0 d-flex align-items-center">
                                 <a
                                     class="text-decoration-none text-dark"
                                     href="{{ route('logout') }}"
