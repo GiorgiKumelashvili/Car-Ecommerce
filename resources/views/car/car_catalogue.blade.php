@@ -259,18 +259,18 @@
 
                                 <div class="card-body">
                                     <div class="card-text d-flex justify-content-between">
-                                        <p>Starting Price</p>
+                                        <p>{{ __('ფასი') }}</p>
                                         <p class="font-weight-bold">$ {{$car->price_usd}}</p>
                                     </div>
                                     <div class="card-text d-flex justify-content-between">
-                                        <p>distance</p>
+                                        <p>{{ __('გავლილი მანძილი') }}</p>
                                         <p class="font-weight-bold">{{$car->distance}} კმ</p>
                                     </div>
 
                                     <a href="{{route('carDetailedView', ['id' => $car->id])}}"
                                        class="card-link text-white">
                                         <button class="btn btn-primary d-block quad-rounded-less mt-4 ml-auto">
-                                            Detailed Review
+                                            {{ __('დეტალურად ნახვა') }}
                                         </button>
                                     </a>
                                 </div>

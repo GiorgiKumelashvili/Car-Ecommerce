@@ -36,10 +36,10 @@
                 <ul class="navbar-nav text-center flex-grow-1 justify-content-center font-weight-bold">
 
                     @foreach([
-                        'home' => 'Home',
-                        'carCatalogue' => 'Car catalogue',
-                        'contactUs' => 'Contact Us',
-                        'help' => 'Help'
+                        'home' => 'მთავარი',
+                        'carCatalogue' => 'კატალოგი',
+                        'contactUs' => 'კონტაკტი',
+                        'help' => 'დახმარება'
                     ] as $key => $value)
                         <li class="nav-item {{ request()->routeIs($key) ? 'active' : '' }}">
                             <a
@@ -58,7 +58,7 @@
                     @guest
                         @if (Route::has('login'))
                             <a class="nav-link text-primary font-weight-bold" href="{{ route('register') }}">
-                                {{ __('Register') }}
+                                {{ __('რეგიტრაცია') }}
                             </a>
                         @endif
 
@@ -67,7 +67,7 @@
                                 class="nav-link border border-primary quad-rounded px-3 ml-2 text-primary font-weight-bold"
                                 href="{{ route('login') }}"
                             >
-                                {{ __('Log in') }}
+                                {{ __('ავტორიზაცია') }}
                             </a>
                         @endif
                     @else
@@ -85,11 +85,11 @@
 
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                 <a class="dropdown-item p-3" href="">
-                                    {{ __('Profile') }}
+                                    {{ __('პროფილი') }}
                                 </a>
 
                                 <a class="dropdown-item p-3" href="">
-                                    {{ __('Cart') }}
+                                    {{ __('კალათა') }}
                                 </a>
 
                                 <a
@@ -97,7 +97,7 @@
                                     href="{{ route('logout') }}"
                                     onclick="event.preventDefault();document.getElementById('logout-form').submit();"
                                 >
-                                    {{ __('Logout') }}
+                                    {{ __('გამოსვლა') }}
                                 </a>
 
                                 <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
