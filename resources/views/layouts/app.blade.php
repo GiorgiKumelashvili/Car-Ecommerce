@@ -34,18 +34,22 @@
             <div class="collapse navbar-collapse d-flex" id="navbarSupportedContent">
                 <!-- Left Side Of Navbar -->
                 <ul class="navbar-nav text-center flex-grow-1 justify-content-center font-weight-bold">
-                    <li class="nav-item {{ request()->routeIs('home') ? 'active' : '' }}">
-                        <a class="nav-link" href="{{ route('home') }}">{{ __('Home') }}</a>
-                    </li>
-                    <li class="nav-item {{ request()->routeIs('carCatalogue') ? 'active' : '' }}">
-                        <a class="nav-link" href="{{route('carCatalogue')}}">{{ __('Car Catalogue') }}</a>
-                    </li>
-                    <li class="nav-item {{ request()->routeIs('Contact Us') ? 'active' : '' }}">
-                        <a class="nav-link" href="">{{ __('Contact Us') }}</a>
-                    </li>
-                    <li class="nav-item {{ request()->routeIs('Help') ? 'active' : '' }}">
-                        <a class="nav-link" href="">{{ __('Help') }}</a>
-                    </li>
+
+                    @foreach([
+                        'home' => 'Home',
+                        'carCatalogue' => 'Car catalogue',
+                        'ContactUs' => 'Contact Us',
+                        'Help' => 'Help'
+                    ] as $key => $value)
+                        <li class="nav-item {{ request()->routeIs($key) ? 'active' : '' }}">
+                            <a
+                                class="nav-link"
+                                href="{{ Route::has($key) ? route($key) : '' }}"
+                            >
+                                {{ __($value) }}
+                            </a>
+                        </li>
+                    @endforeach
                 </ul>
 
                 <!-- Right Side Of Navbar -->

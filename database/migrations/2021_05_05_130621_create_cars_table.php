@@ -14,7 +14,7 @@ class CreateCarsTable extends Migration {
         Schema::create('cars', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->integer('price_usd');
+            $table->integer('price_usd')->nullable();
             $table->string('img_url', 2100);
             $table->integer('distance');
             $table->unsignedBigInteger('car_details_id');

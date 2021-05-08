@@ -1,18 +1,23 @@
 <?php
 
+use App\Http\Controllers\CarDetailsController;
+use App\Http\Controllers\CarController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 
 Auth::routes();
-Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::get('/car_catalogue', [App\Http\Controllers\HomeController::class, 'carCatalogue'])->name('carCatalogue');
-Route::get('/car_detailed_view/{id}', [App\Http\Controllers\HomeController::class, 'carDetailedView'])->name('carDetailedView');
+Route::get('/', [CarController::class, 'index'])->name('home');
+Route::get('/home', [CarController::class, 'index'])->name('home');
+Route::get('/home/catalogue', [CarController::class, 'catalogue'])->name('carCatalogue');
+Route::get('/car/{id}', [CarDetailsController::class, 'index'])->name('carDetailedView');
 
 
 /*
- * em: gio@gio.com
- * ps: giusha123
+ * todo (responsivnes: home page, car details, car catalogue[+], user profile)
+ * todo sheinxe valuebi catalogshi da clear all miamate
+ * em: giorgi@giorgi.com
+ * ps: giorgi123
  *
  * https://www.myauto.ge/ka/
  * https://undraw.co/illustrations
@@ -25,4 +30,72 @@ Route::get('/car_detailed_view/{id}', [App\Http\Controllers\HomeController::clas
  *
  * (bottom)
  * https://dribbble.com/shots/14764444-Car-Catalogue-Carent-purple-ver
+ */
+
+
+/*
+Route::get('/seed-users-temp', function () {
+    $arr = [
+        [
+            "email" => "giorgi@giorgi.com",
+            "username" => "giorgi",
+            "password" => "giorgi123"
+        ],
+        [
+            "email" => "luka@luka.com",
+            "username" => "luka",
+            "password" => "luka123"
+        ],
+        [
+            "email" => "ana@ana.com",
+            "username" => "ana",
+            "password" => "ana123"
+        ],
+        [
+            "email" => "levani@levani.com",
+            "username" => "levani",
+            "password" => "levani123"
+        ],
+        [
+            "email" => "nika@nika.com",
+            "username" => "nika",
+            "password" => "nika123"
+        ],
+        [
+            "email" => "ricardo@ricardo.com",
+            "username" => "ricardo",
+            "password" => "ricardo123"
+        ],
+        [
+            "email" => "sandro@sandro.com",
+            "username" => "sandro",
+            "password" => "sandro123"
+        ],
+        [
+            "email" => "mari@mari.com",
+            "username" => "mari",
+            "password" => "mari123"
+        ],
+        [
+            "email" => "alexi@alexi.com",
+            "username" => "alexi",
+            "password" => "alexi123"
+        ],
+        [
+            "email" => "jemali@jemali.com",
+            "username" => "jemali",
+            "password" => "jemali123"
+        ]
+    ];
+
+
+    foreach ($arr as $key => $value) {
+        User::create([
+            'name' => $value['username'],
+            'email' => $value['email'],
+            'password' => Hash::make($value['password']),
+        ]);
+    }
+
+});
  */

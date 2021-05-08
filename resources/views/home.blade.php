@@ -97,33 +97,73 @@
             </h5>
 
 
-            <div class="card quad-rounded mt-5 shadow-sm" style="width: 20rem">
-                <h4 class="card-title font-weight-bold text-center m-0 py-4 px-4 text-truncate">
-                    MERCEDES-BENZ E 350
-                </h4>
+            @if(false)
+                <div class="card quad-rounded mt-5 shadow-sm" style="width: 20rem">
+                    <h4 class="card-title font-weight-bold text-center m-0 py-4 px-4 text-truncate">
+                        MERCEDES-BENZ E 350
+                    </h4>
 
-                <img
-                    src="https://firebasestorage.googleapis.com/v0/b/car-ecommerce.appspot.com/o/52072612-1-large.jpg?alt=media"
-                    class="card-img-top"
-                    alt="mercedes"
-                >
-                <div class="card-body">
-                    <div class="card-text d-flex justify-content-between">
-                        <p>Starting Price</p>
-                        <p class="font-weight-bold">$ 35,000</p>
-                    </div>
-                    <div class="card-text d-flex justify-content-between">
-                        <p>distance</p>
-                        <p class="font-weight-bold">185600 კმ</p>
-                    </div>
+                    <img
+                        src="https://firebasestorage.googleapis.com/v0/b/car-ecommerce.appspot.com/o/52072612-1-large.jpg?alt=media"
+                        class="card-img-top"
+                        alt="mercedes"
+                    >
+                    <div class="card-body">
+                        <div class="card-text d-flex justify-content-between">
+                            <p>Starting Price</p>
+                            <p class="font-weight-bold">$ 35,000</p>
+                        </div>
+                        <div class="card-text d-flex justify-content-between">
+                            <p>distance</p>
+                            <p class="font-weight-bold">185600 კმ</p>
+                        </div>
 
-                    <a href="{{route('carDetailedView', ['id' => '001'])}}" class="card-link text-white">
-                        <button class="btn btn-primary d-block quad-rounded-less mt-4">
-                            Detailed Review
-                        </button>
-                    </a>
+                        <a href="{{route('carDetailedView', ['id' => '001'])}}" class="card-link text-white">
+                            <button class="btn btn-primary d-block quad-rounded-less mt-4">
+                                Detailed Review
+                            </button>
+                        </a>
+                    </div>
                 </div>
+            @endif
+
+
+            <div class="row">
+                @foreach($hotDeals as $hotDeal)
+                    <div class="col-12 col-md-3">
+                        <div class="card quad-rounded mt-5 shadow-sm">
+                            <h4 class="card-title font-weight-bold text-center m-0 py-4 px-4 text-truncate">
+                                {{$hotDeal->name}}
+                            </h4>
+
+                            <img
+                                src="{{$hotDeal->img_url}}"
+                                style="object-fit: cover; height: 12rem"
+                                class="card-img-top"
+                                alt="mercedes"
+                            >
+
+                            <div class="card-body">
+                                <div class="card-text d-flex justify-content-between">
+                                    <p>Starting Price</p>
+                                    <p class="font-weight-bold">$ {{$hotDeal->price_usd}}</p>
+                                </div>
+                                <div class="card-text d-flex justify-content-between">
+                                    <p>distance</p>
+                                    <p class="font-weight-bold">{{$hotDeal->distance}} კმ</p>
+                                </div>
+                                <a href="{{route('carDetailedView', ['id' => $hotDeal->id])}}"
+                                   class="card-link text-white">
+                                    <button class="btn btn-primary d-block quad-rounded-less mt-4">
+                                        Detailed Review
+                                    </button>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                @endforeach
             </div>
+
         </div>
     </div>
 @endsection
