@@ -59,27 +59,32 @@
                             </a>
 
                             <a href=""
-                               class="text-decoration-none text-dark list-group-item border-0"
-                            >
-                                {{__('შენახული მანქანები')}}
+                               class="text-decoration-none text-dark list-group-item border-0">
+                                {{__('დაამატეთ განცხადებები')}}
                             </a>
 
-                            <a href=""
+                            <a href="{{route('profileDetails')}}"
                                class="text-decoration-none text-dark list-group-item border-0"
                             >
                                 {{__('ფეივორიტები')}}
                             </a>
 
-                            <a href=""
+                            <a href="{{route('profileDetails')}}"
                                class="text-decoration-none text-dark list-group-item border-0"
                             >
                                 {{__('ჩემი წერილები')}}
                             </a>
 
-                            <a href=""
+                            <a href="{{route('profileDetails')}}"
                                class="text-decoration-none text-dark list-group-item border-0"
                             >
                                 {{__('ბალანსის შევსება')}}
+                            </a>
+
+                            <a href="{{route('profileDetails')}}"
+                               class="text-decoration-none text-dark list-group-item border-0"
+                            >
+                                {{__('პროფილის რედაქტირება')}}
                             </a>
 
                             <a href="{{ route('logout') }}"
@@ -107,7 +112,10 @@
                 </div>
 
                 <div class="col-9 bg-light quad-rounded-less shadow p-4">
-                    @if(request()->route()->getName() == 'profileAnnouncements')
+                    @if(
+                        request()->route()->getName() == 'profileAnnouncements' ||
+                        request()->route()->getName() == 'profileDetails'
+                    )
                         {{-- Car catalogue list --}}
                         @yield('profile_content')
                     @else

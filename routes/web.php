@@ -16,11 +16,19 @@ Route::view('/contact', 'contact')->name('contactUs');
 Route::view('/help', 'help')->name('help');
 
 Route::get('/profile/announcements', [ProfileController::class, 'announcements'])->name('profileAnnouncements');
+Route::post('/profile/announcements/delete', [ProfileController::class, 'announcementDelete'])->name('announcementDelete');
+
+Route::get('/profile/details', [ProfileController::class, 'profile'])->name('profileDetails');
+//Route::post('/profile/details', [ProfileController::class, 'profileChange'])->name('profileChange');
 
 
 /*
+ * todo Insert (!!!!!!)
+ * todo delete images from firebase as well (!!!!)
+ * todo description detalur naxvaze (!!)
+ *
+ * todo merec mixedav
  * todo (responsivnes: home page, car details, car catalogue[+], user profile)
- * todo sheinxe valuebi catalogshi da clear all miamate
  * todo dafavoriteba
  *
  * em: giorgi@giorgi.com

@@ -154,32 +154,6 @@
                             </div>
                         </div>
 
-                        <script>
-                            const priceId = 'car_price';
-                            const key = '90a5b077b38823db30f2d37ad1e2fb91';
-                            const url = `http://data.fixer.io/api/latest?access_key=${key}&format=1`;
-
-                            function convert(ratesArr) {
-                                const one_usd = ratesArr['GEL'] / ratesArr['USD']; // 1 usd = {one_usd} lari
-                                const priceEl = document.getElementById(priceId);
-                                const is_usd = priceEl.textContent.includes('USD');
-                                const price = parseInt(priceEl.textContent);
-
-                                // set usd or gel
-                                priceEl.textContent =
-                                    (is_usd ? price * one_usd : price / one_usd).toFixed(0).toString() +
-                                    ' ' +
-                                    (is_usd ? 'GEL' : 'USD');
-                            }
-
-                            function currencyConvert() {
-                                fetch(url)
-                                    .then(res => res.json())
-                                    .then(({rates}) => convert(rates))
-                                    .catch(err => console.log(err));
-                            }
-                        </script>
-
                         <div class="alert alert-info p-1 m-0 mt-3 flex-grow-1" role="alert">
                             <h6 class="card-title text-center m-0">
                                 @if($car->is_levied)
@@ -267,4 +241,30 @@
         </div>
         <div class="col-3"></div>
     </div>
+
+    <script>
+        const priceId = 'car_price';
+        const key = '90a5b077b38823db30f2d37ad1e2fb91';
+        const url = `http://data.fixer.io/api/latest?access_key=${key}&format=1`;
+
+        function convert(ratesArr) {
+            const one_usd = ratesArr['GEL'] / ratesArr['USD']; // 1 usd = {one_usd} lari
+            const priceEl = document.getElementById(priceId);
+            const is_usd = priceEl.textContent.includes('USD');
+            const price = parseInt(priceEl.textContent);
+
+            // set usd or gel
+            priceEl.textContent =
+                (is_usd ? price * one_usd : price / one_usd).toFixed(0).toString() +
+                ' ' +
+                (is_usd ? 'GEL' : 'USD');
+        }
+
+        function currencyConvert() {
+            fetch(url)
+                .then(res => res.json())
+                .then(({rates}) => convert(rates))
+                .catch(err => console.log(err));
+        }
+    </script>
 @endsection

@@ -5,18 +5,17 @@ namespace App\Models;
 use App\Http\Resources\CarDetailsResource;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\BelongsTo;
-use Illuminate\Http\Resources\Json\JsonResource;
 use Illuminate\Support\Facades\DB;
 
 /**
  * @method static where(string $string, $id)
  * @method static paginate(int $int)
  */
-class Car extends Model
-{
+class Car extends Model {
     use HasFactory;
+
     protected $hidden = ['password'];
+    protected $guarded = [];
 
     public static function withDetailsAndImages(string $key, string $value): CarDetailsResource {
         $car = DB::table('cars')
@@ -37,7 +36,8 @@ class Car extends Model
         return new CarDetailsResource($car[0]);
     }
 
-    public function details(): BelongsTo {
-        return $this->belongsTo(CarDetails::class);
+    public function details(): \Illuminate\Database\Eloquent\Relations\HasOne {
+        return $this->hasOne(CarDetails::class, 'id', 'car_details_id');
+//        return $this->belongsTo(CarDetails::class);
     }
 }

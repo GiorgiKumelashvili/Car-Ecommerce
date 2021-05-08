@@ -112,28 +112,25 @@
     </div>
 
 
-{{--    <!-- The core Firebase JS SDK is always required and must be listed first -->--}}
-{{--    <script src="https://www.gstatic.com/firebasejs/8.4.3/firebase-app.js"></script>--}}
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.4.3/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.4.3/firebase-analytics.js"></script>
 
-{{--    <!-- TODO: Add SDKs for Firebase products that you want to use--}}
-{{--     https://firebase.google.com/docs/web/setup#available-libraries -->--}}
-{{--    <script src="https://www.gstatic.com/firebasejs/8.4.3/firebase-analytics.js"></script>--}}
+    <!--suppress JSUnresolvedVariable, JSUnresolvedFunction -->
+    <script>
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        firebase.initializeApp({
+            apiKey: "AIzaSyDPEM5VInlxFQXF2KylJ6iX1F-BujlJPY8",
+            authDomain: "car-ecommerce.firebaseapp.com",
+            projectId: "car-ecommerce",
+            storageBucket: "car-ecommerce.appspot.com",
+            messagingSenderId: "791729049608",
+            appId: "1:791729049608:web:e5d30023d42daa81a5c1bd",
+            measurementId: "G-L8CQW4QLSY"
+        });
 
-{{--    <script>--}}
-{{--        // Your web app's Firebase configuration--}}
-{{--        // For Firebase JS SDK v7.20.0 and later, measurementId is optional--}}
-{{--        var firebaseConfig = {--}}
-{{--            apiKey: "AIzaSyDPEM5VInlxFQXF2KylJ6iX1F-BujlJPY8",--}}
-{{--            authDomain: "car-ecommerce.firebaseapp.com",--}}
-{{--            projectId: "car-ecommerce",--}}
-{{--            storageBucket: "car-ecommerce.appspot.com",--}}
-{{--            messagingSenderId: "791729049608",--}}
-{{--            appId: "1:791729049608:web:e5d30023d42daa81a5c1bd",--}}
-{{--            measurementId: "G-L8CQW4QLSY"--}}
-{{--        };--}}
-{{--        // Initialize Firebase--}}
-{{--        firebase.initializeApp(firebaseConfig);--}}
-{{--        firebase.analytics();--}}
-{{--    </script>--}}
+        firebase.analytics();
+    </script>
 </body>
 </html>

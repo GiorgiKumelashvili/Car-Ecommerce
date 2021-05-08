@@ -40,14 +40,14 @@ w
                             id="email"
                             required
                             autofocus
-                            type="text"
-                            name="name"
-                            value="{{ old('name') }}"
-                            autocomplete="name"
+                            type="email"
+                            name="email"
+                            value="{{ old('email') }}"
+                            autocomplete="email"
                             class="form-control @error('name') is-invalid @enderror rounded-pill"
                         >
 
-                        @error('name')
+                        @error('email')
                         <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
