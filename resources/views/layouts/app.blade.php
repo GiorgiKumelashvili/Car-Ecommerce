@@ -38,8 +38,8 @@
                     @foreach([
                         'home' => 'Home',
                         'carCatalogue' => 'Car catalogue',
-                        'ContactUs' => 'Contact Us',
-                        'Help' => 'Help'
+                        'contactUs' => 'Contact Us',
+                        'help' => 'Help'
                     ] as $key => $value)
                         <li class="nav-item {{ request()->routeIs($key) ? 'active' : '' }}">
                             <a
