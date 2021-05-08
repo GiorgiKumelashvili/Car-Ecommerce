@@ -5,6 +5,7 @@ namespace App\Models;
 use App\Http\Resources\CarDetailsResource;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Http\Resources\Json\JsonResource;
 use Illuminate\Support\Facades\DB;
 
@@ -34,5 +35,9 @@ class Car extends Model
         $car[0]->images = $images;
 
         return new CarDetailsResource($car[0]);
+    }
+
+    public function details(): BelongsTo {
+        return $this->belongsTo(CarDetails::class);
     }
 }

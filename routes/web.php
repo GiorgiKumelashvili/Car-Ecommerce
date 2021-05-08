@@ -14,7 +14,9 @@ Route::get('/home/catalogue', [CarController::class, 'catalogue'])->name('carCat
 Route::get('/car/{id}', [CarDetailsController::class, 'index'])->name('carDetailedView');
 Route::view('/contact', 'contact')->name('contactUs');
 Route::view('/help', 'help')->name('help');
-Route::get('/profile', [ProfileController::class, 'index'])->name('profile');
+
+Route::get('/profile/announcements', [ProfileController::class, 'announcements'])->name('profileAnnouncements');
+
 
 /*
  * todo (responsivnes: home page, car details, car catalogue[+], user profile)

@@ -1,3 +1,4 @@
+<!--suppress HtmlUnknownTag -->
 @extends('layouts.app')
 
 @section('content')
@@ -6,16 +7,12 @@
             background-color: rgba(0, 0, 0, 0.1);
         }
 
-
         .list-group-item:hover:not(.list-group-item:first-child) {
             background-color: rgba(0, 0, 0, 0.3);
+            color: white !important;
             box-shadow: 0 0 0 3px white;
             border-radius: 5px;
             font-weight: bold;
-        }
-
-        .list-group-item:hover:not(.list-group-item:first-child) a{
-            color: white !important;
         }
 
         .list-group-item:active:not(.list-group-item:first-child) {
@@ -28,7 +25,7 @@
                 <div class="col-3">
                     <div class="bg-light quad-rounded-less shadow">
                         <ul class="list-group quad-rounded-less pointer">
-                            <li class="list-group-item logout-link border-0">
+                            <li class="list-group-item border-0">
                                 <div class="d-flex">
                                     <div class="d-flex align-items-center">
                                         <svg class="bi bi-person-circle text-info"
@@ -55,39 +52,41 @@
                                     </div>
                                 </div>
                             </li>
-                            <li class="list-group-item logout-link border-0">
-                                <a href="" class="text-decoration-none text-dark">
-                                    {{__('ჩემი განცხადებები')}}
-                                </a>
-                            </li>
-                            <li class="list-group-item logout-link border-0">
-                                <a href="" class="text-decoration-none text-dark">
-                                    {{__('შენახული მანქანები')}}
-                                </a>
-                            </li>
-                            <li class="list-group-item logout-link border-0">
-                                <a href="" class="text-decoration-none text-dark">
-                                    {{__('ფეივორიტები')}}
-                                </a>
-                            </li>
-                            <li class="list-group-item logout-link border-0">
-                                <a href="" class="text-decoration-none text-dark">
-                                    {{__('ჩემი წერილები')}}
-                                </a>
-                            </li>
-                            <li class="list-group-item logout-link border-0">
-                                <a href="" class="text-decoration-none text-dark">
-                                    {{__('ბალანსის შევსება')}}
-                                </a>
-                            </li>
-                            <li class="list-group-item border-0 d-flex align-items-center">
-                                <a
-                                    class="text-decoration-none text-dark"
-                                    href="{{ route('logout') }}"
-                                    onclick="event.preventDefault();document.getElementById('logout-form').submit();"
-                                >
-                                    {{ __('გამოსვლა') }}
-                                </a>
+
+                            <a href="{{route('profileAnnouncements')}}"
+                               class="text-decoration-none text-dark list-group-item border-0">
+                                {{__('ჩემი განცხადებები')}}
+                            </a>
+
+                            <a href=""
+                               class="text-decoration-none text-dark list-group-item border-0"
+                            >
+                                {{__('შენახული მანქანები')}}
+                            </a>
+
+                            <a href=""
+                               class="text-decoration-none text-dark list-group-item border-0"
+                            >
+                                {{__('ფეივორიტები')}}
+                            </a>
+
+                            <a href=""
+                               class="text-decoration-none text-dark list-group-item border-0"
+                            >
+                                {{__('ჩემი წერილები')}}
+                            </a>
+
+                            <a href=""
+                               class="text-decoration-none text-dark list-group-item border-0"
+                            >
+                                {{__('ბალანსის შევსება')}}
+                            </a>
+
+                            <a href="{{ route('logout') }}"
+                               class="text-decoration-none text-dark list-group-item border-0"
+                               onclick="event.preventDefault();document.getElementById('logout-form').submit();"
+                            >
+                                {{ __('გამოსვლა') }}
 
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"
@@ -102,13 +101,18 @@
                                     <path fill-rule="evenodd"
                                           d="M.146 8.354a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L1.707 7.5H10.5a.5.5 0 0 1 0 1H1.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3z"/>
                                 </svg>
-                            </li>
+                            </a>
                         </ul>
                     </div>
                 </div>
 
-                <div class="col-9 bg-light quad-rounded-less shadow">
-                    <h1>aoskd</h1>
+                <div class="col-9 bg-light quad-rounded-less shadow p-4">
+                    @if(request()->route()->getName() == 'profileAnnouncements')
+                        {{-- Car catalogue list --}}
+                        @yield('profile_content')
+                    @else
+                        <h1 class="text-black-50">{{__('გვერდი მალე დაემატება')}}</h1>
+                    @endif
                 </div>
             </div>
         </div>

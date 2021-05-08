@@ -82,7 +82,6 @@ class CarController extends Controller {
             $query = $query->where('release_year', '<=', $yearTo);
         }
 
-        //================================================
         //wheel
         if ($wheel = $request->input('wheel_side')) {
             $query->select('car_details.wheel_side')->select('cars.*');
