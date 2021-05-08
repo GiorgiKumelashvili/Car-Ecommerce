@@ -21,7 +21,7 @@
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white px-middle">
+        <nav class="navbar navbar-expand-md navbar-light bg-white px-middle shadow-sm">
             <a class="navbar-brand spacer" href="{{ url('/') }}">
                 {{ config('app.name', 'Laravel') }}
             </a>
@@ -80,16 +80,12 @@
                                 aria-haspopup="true"
                                 aria-expanded="false"
                             >
-                                {{ Auth::user()->name }}
+                                {{ ucfirst(Auth::user()->name) }}
                             </a>
 
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item p-3" href="">
+                                <a class="dropdown-item p-3" href="{{route('profile')}}">
                                     {{ __('პროფილი') }}
-                                </a>
-
-                                <a class="dropdown-item p-3" href="">
-                                    {{ __('კალათა') }}
                                 </a>
 
                                 <a
@@ -116,28 +112,28 @@
     </div>
 
 
-    <!-- The core Firebase JS SDK is always required and must be listed first -->
-    <script src="https://www.gstatic.com/firebasejs/8.4.3/firebase-app.js"></script>
+{{--    <!-- The core Firebase JS SDK is always required and must be listed first -->--}}
+{{--    <script src="https://www.gstatic.com/firebasejs/8.4.3/firebase-app.js"></script>--}}
 
-    <!-- TODO: Add SDKs for Firebase products that you want to use
-     https://firebase.google.com/docs/web/setup#available-libraries -->
-    <script src="https://www.gstatic.com/firebasejs/8.4.3/firebase-analytics.js"></script>
+{{--    <!-- TODO: Add SDKs for Firebase products that you want to use--}}
+{{--     https://firebase.google.com/docs/web/setup#available-libraries -->--}}
+{{--    <script src="https://www.gstatic.com/firebasejs/8.4.3/firebase-analytics.js"></script>--}}
 
-    <script>
-        // Your web app's Firebase configuration
-        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-        var firebaseConfig = {
-            apiKey: "AIzaSyDPEM5VInlxFQXF2KylJ6iX1F-BujlJPY8",
-            authDomain: "car-ecommerce.firebaseapp.com",
-            projectId: "car-ecommerce",
-            storageBucket: "car-ecommerce.appspot.com",
-            messagingSenderId: "791729049608",
-            appId: "1:791729049608:web:e5d30023d42daa81a5c1bd",
-            measurementId: "G-L8CQW4QLSY"
-        };
-        // Initialize Firebase
-        firebase.initializeApp(firebaseConfig);
-        firebase.analytics();
-    </script>
+{{--    <script>--}}
+{{--        // Your web app's Firebase configuration--}}
+{{--        // For Firebase JS SDK v7.20.0 and later, measurementId is optional--}}
+{{--        var firebaseConfig = {--}}
+{{--            apiKey: "AIzaSyDPEM5VInlxFQXF2KylJ6iX1F-BujlJPY8",--}}
+{{--            authDomain: "car-ecommerce.firebaseapp.com",--}}
+{{--            projectId: "car-ecommerce",--}}
+{{--            storageBucket: "car-ecommerce.appspot.com",--}}
+{{--            messagingSenderId: "791729049608",--}}
+{{--            appId: "1:791729049608:web:e5d30023d42daa81a5c1bd",--}}
+{{--            measurementId: "G-L8CQW4QLSY"--}}
+{{--        };--}}
+{{--        // Initialize Firebase--}}
+{{--        firebase.initializeApp(firebaseConfig);--}}
+{{--        firebase.analytics();--}}
+{{--    </script>--}}
 </body>
 </html>

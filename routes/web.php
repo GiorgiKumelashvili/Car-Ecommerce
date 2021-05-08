@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\CarDetailsController;
 use App\Http\Controllers\CarController;
+use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -13,10 +14,13 @@ Route::get('/home/catalogue', [CarController::class, 'catalogue'])->name('carCat
 Route::get('/car/{id}', [CarDetailsController::class, 'index'])->name('carDetailedView');
 Route::view('/contact', 'contact')->name('contactUs');
 Route::view('/help', 'help')->name('help');
+Route::get('/profile', [ProfileController::class, 'index'])->name('profile');
 
 /*
  * todo (responsivnes: home page, car details, car catalogue[+], user profile)
  * todo sheinxe valuebi catalogshi da clear all miamate
+ * todo dafavoriteba
+ *
  * em: giorgi@giorgi.com
  * ps: giorgi123
  *
