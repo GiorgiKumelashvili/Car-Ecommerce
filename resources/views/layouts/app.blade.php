@@ -84,7 +84,7 @@
                             </a>
 
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item p-3" href="{{route('profileAnnouncements')}}">
+                                <a class="dropdown-item p-3" href="{{route('announcements')}}">
                                     {{ __('პროფილი') }}
                                 </a>
 

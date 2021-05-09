@@ -15,17 +15,23 @@ Route::get('/car/{id}', [CarDetailsController::class, 'index'])->name('carDetail
 Route::view('/contact', 'contact')->name('contactUs');
 Route::view('/help', 'help')->name('help');
 
-Route::get('/profile/announcements', [ProfileController::class, 'announcements'])->name('profileAnnouncements');
-Route::post('/profile/announcements/delete', [ProfileController::class, 'announcementDelete'])->name('announcementDelete');
 
-Route::get('/profile/details', [ProfileController::class, 'profile'])->name('profileDetails');
-//Route::post('/profile/details', [ProfileController::class, 'profileChange'])->name('profileChange');
+Route::group(['middleware' => 'auth'], function() {
+    Route::get('/profile/announcements', [ProfileController::class, 'announcements'])->name('announcements');
+    Route::get('/profile/announcements/add', [ProfileController::class, 'announcementAdd'])->name('announcement.add');
+    Route::post('/profile/announcements/delete', [ProfileController::class, 'announcementDelete'])->name('announcement.delete');
+
+    Route::get('/profile/details', [ProfileController::class, 'profileDetails'])->name('profile');
+    Route::post('/profile/details/edit', [ProfileController::class, 'profileEdit'])->name('profile.edit');
+});
+
 
 
 /*
  * todo Insert (!!!!!!)
  * todo delete images from firebase as well (!!!!)
  * todo description detalur naxvaze (!!)
+ * todo user profile update (!)
  *
  * todo merec mixedav
  * todo (responsivnes: home page, car details, car catalogue[+], user profile)

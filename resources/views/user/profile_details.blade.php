@@ -4,7 +4,7 @@
     <h1 class="text-center">{{__('პროფილის რედაქტირება')}}</h1>
 
     <div class="p-5">
-        <form method="POST" action="{{ route('register') }}">
+        <form method="POST" action="{{ route('profile.edit') }}">
             @csrf
 
             <div class="form-group pt-4">
@@ -39,9 +39,9 @@
                     required
                     autofocus
                     type="text"
-                    name="name"
+                    name="email"
                     value="{{ $user->email }}"
-                    autocomplete="name"
+                    autocomplete="email"
                     class="form-control @error('name') is-invalid @enderror rounded-pill"
                 >
 

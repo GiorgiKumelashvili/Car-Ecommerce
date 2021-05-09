@@ -53,35 +53,35 @@
                                 </div>
                             </li>
 
-                            <a href="{{route('profileAnnouncements')}}"
+                            <a href="{{route('announcements')}}"
                                class="text-decoration-none text-dark list-group-item border-0">
                                 {{__('ჩემი განცხადებები')}}
                             </a>
 
-                            <a href=""
+                            <a href="{{route('announcement.add')}}"
                                class="text-decoration-none text-dark list-group-item border-0">
                                 {{__('დაამატეთ განცხადებები')}}
                             </a>
 
-                            <a href="{{route('profileDetails')}}"
+                            <a href="{{route('profile')}}"
                                class="text-decoration-none text-dark list-group-item border-0"
                             >
                                 {{__('ფეივორიტები')}}
                             </a>
 
-                            <a href="{{route('profileDetails')}}"
+                            <a href="{{route('profile')}}"
                                class="text-decoration-none text-dark list-group-item border-0"
                             >
                                 {{__('ჩემი წერილები')}}
                             </a>
 
-                            <a href="{{route('profileDetails')}}"
+                            <a href="{{route('profile')}}"
                                class="text-decoration-none text-dark list-group-item border-0"
                             >
                                 {{__('ბალანსის შევსება')}}
                             </a>
 
-                            <a href="{{route('profileDetails')}}"
+                            <a href="{{route('profile')}}"
                                class="text-decoration-none text-dark list-group-item border-0"
                             >
                                 {{__('პროფილის რედაქტირება')}}
@@ -112,12 +112,12 @@
                 </div>
 
                 <div class="col-9 bg-light quad-rounded-less shadow p-4">
-                    @if(
-                        request()->route()->getName() == 'profileAnnouncements' ||
-                        request()->route()->getName() == 'profileDetails'
-                    )
-                        {{-- Car catalogue list --}}
+                    {{-- Car profile page --}}
+                    @if(in_array(request()->route()->getName(), [
+                        'announcements','profile','announcement.add'
+                    ]))
                         @yield('profile_content')
+                    {{-- Car profile error page --}}
                     @else
                         <h1 class="text-black-50">{{__('გვერდი მალე დაემატება')}}</h1>
                     @endif

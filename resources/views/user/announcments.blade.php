@@ -74,7 +74,7 @@
                         {{__('ჩაკეცვა')}}
                     </button>
 
-                    <form action="{{route('announcementDelete')}}" method="POST">
+                    <form action="{{route('announcement.delete')}}" method="POST">
                         <input type="text" name="id" value="" id="deleteIdInput" class="text-hide">
 
                         <button type="submit" class="btn btn-danger">
