@@ -4,8 +4,6 @@
 @section('profile_content')
     <h1 class="text-center">{{__('დაამატეთ მანქანის სურათები')}}</h1>
 
-    {{$detailID}}
-
     {{-- price, engine, year --}}
     <div class="row mt-5">
         <div class="col-12">

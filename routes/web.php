@@ -3,6 +3,8 @@
 use App\Http\Controllers\CarDetailsController;
 use App\Http\Controllers\CarController;
 use App\Http\Controllers\profile\AnnouncmentsController;
+use App\Http\Controllers\profile\FavouritesController;
+use App\Http\Controllers\profile\LettersController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -20,12 +22,20 @@ Route::view('/help', 'help')->name('help');
 
 // only authenticated can use this
 Route::group(['middleware' => 'auth'], function () {
+    // announcments
     Route::get('/profile/announcements', [AnnouncmentsController::class, 'index'])->name('announcements.index');
     Route::get('/profile/announcements/create', [AnnouncmentsController::class, 'create'])->name('announcement.create');
     Route::post('/profile/announcements', [AnnouncmentsController::class, 'store'])->name('announcement.store');
     Route::get('/profile/announcements/create/images/{detailID}/{carID}', [AnnouncmentsController::class, 'createImages'])->name('announcement.create.images');
     Route::delete('/profile/announcements/delete', [AnnouncmentsController::class, 'destroy'])->name('announcement.destroy');
 
+    // favourites
+    Route::get('/profile/favourites', [FavouritesController::class, 'index'])->name('favourites.index');
+
+    // letters
+    Route::get('/profile/letters', [LettersController::class, 'index'])->name('letters.index');
+
+    // edit (e.g. profile details)
     Route::get('/profile/edit', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::put('/profile/edit', [ProfileController::class, 'update'])->name('profile.update');
 });

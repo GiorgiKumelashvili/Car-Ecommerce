@@ -146,6 +146,7 @@ class AnnouncmentsController extends Controller {
         $details = $car->details()->first();
 
         // get car images and delete others including images
+        //todo delete images from firebase
         DB::table('images')->where('car_details_id', $details->id)->delete();
         $car->delete();
         $details->delete();

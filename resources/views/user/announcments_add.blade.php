@@ -209,7 +209,7 @@
 
         {{-- fuel type, city --}}
         <div class="row mt-4">
-            <div class="col-4">
+            <div class="col-6">
                 <select
                     class="custom-select border quad-rounded-less {{$errors->has('fuel_type') ? "border-danger" : ""}}"
                     name="fuel_type"
@@ -230,28 +230,7 @@
                 @enderror
             </div>
 
-            <div class="col-4">
-                <select
-                    class="custom-select border quad-rounded-less {{$errors->has('city_location') ? "border-danger" : ""}}"
-                    name="city_location"
-                    id="city_location"
-                >
-                    <option selected disabled>ქალაქი</option>
-                    @foreach(config('carDetails.city_location') as $value)
-                        <option value="{{$value}}" {{ old('city_location') === $value ? "selected" : "" }}>
-                            {{$value}}
-                        </option>
-                    @endforeach
-                </select>
-
-                @error('city_location')
-                <div class="text-danger pl-2">
-                    {{ $message }}
-                </div>
-                @enderror
-            </div>
-
-            <div class="col-4">
+            <div class="col-6">
                 <select
                     class="custom-select border quad-rounded-less {{$errors->has('cylinders') ? "border-danger" : ""}}"
                     name="cylinders"
@@ -273,7 +252,7 @@
             </div>
         </div>
 
-        {{-- model, city, vin code --}}
+        {{-- model, distance, vin code --}}
         <div class="row mt-4">
             <div class="col-4">
                 <input

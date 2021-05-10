@@ -63,22 +63,16 @@
                                 {{__('დაამატეთ განცხადებები')}}
                             </a>
 
-                            <a href=""
+                            <a href="{{route('favourites.index')}}"
                                class="text-decoration-none text-dark list-group-item border-0"
                             >
                                 {{__('ფეივორიტები')}}
                             </a>
 
-                            <a href=""
+                            <a href="{{route('letters.index')}}"
                                class="text-decoration-none text-dark list-group-item border-0"
                             >
                                 {{__('ჩემი წერილები')}}
-                            </a>
-
-                            <a href=""
-                               class="text-decoration-none text-dark list-group-item border-0"
-                            >
-                                {{__('ბალანსის შევსება')}}
                             </a>
 
                             <a href="{{route('profile.edit')}}"
@@ -114,7 +108,8 @@
                 <div class="col-9 bg-light quad-rounded-less shadow p-4">
                     @if(in_array(request()->route()->getName(), [
                         'announcements.index','profile.edit','announcement.create',
-                        'announcement.create.images'
+                        'announcement.create.images','favourites.index',
+                        'letters.index'
                     ]))
                         {{-- Car profile page --}}
                         @yield('profile_content')
