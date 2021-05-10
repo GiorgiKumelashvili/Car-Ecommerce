@@ -1,7 +1,4 @@
-<?php /** @noinspection SqlNoDataSourceInspection */
-/** @noinspection SqlResolve */
-
-/** @noinspection PhpUndefinedFieldInspection */
+<?php /** @noinspection PhpUndefinedFieldInspection SqlResolve SqlNoDataSourceInspection */
 
 namespace App\Http\Controllers\profile;
 
@@ -65,7 +62,7 @@ class AnnouncmentsController extends Controller {
             "color" => "required",
             "cylinders" => "required",
             "model" => "required",
-            "description" => "min:3|max:1000" // optional
+            "description" => "nullable|min:3|max:1000" // optional
         ]);
 
         $request->merge(['levied' => $request->levied === 'true']);
@@ -88,7 +85,7 @@ class AnnouncmentsController extends Controller {
             "created_at" => date('Y-m-d H:i:s'),
             "updated_at" => date('Y-m-d H:i:s')
         ]);
-//
+
         $details = CarDetails::where('vin_code', $request->vin_code)->first();
 
         // create car (with image not found and car details id)
@@ -103,6 +100,7 @@ class AnnouncmentsController extends Controller {
             "updated_at" => date('Y-m-d H:i:s')
         ]);
 
+        // get id of car
         $car = Car::where('car_details_id', $details->id)->first()->id;
 
         return redirect()->route('announcement.create.images', [
@@ -119,10 +117,8 @@ class AnnouncmentsController extends Controller {
         ]);
 
         foreach ($request->images as $url) {
-            DB::insert('
-                insert into images (url, car_details_id, created_at, updated_at) values (?, ?, ?, ?)',
-                [$url, $request->detailID, date('Y-m-d H:i:s'), date('Y-m-d H:i:s')]
-            );
+            $values = [$url, $request->detailID, date('Y-m-d H:i:s'), date('Y-m-d H:i:s')];
+            DB::insert('insert into images (url, car_details_id, created_at, updated_at) values (?, ?, ?, ?)', $values);
         }
 
         // update main image on user with no car image

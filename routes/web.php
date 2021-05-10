@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\CarDetailsController;
 use App\Http\Controllers\CarController;
+use App\Http\Controllers\home\ContactController;
+use App\Http\Controllers\MailController;
 use App\Http\Controllers\profile\AnnouncmentsController;
 use App\Http\Controllers\profile\FavouritesController;
 use App\Http\Controllers\profile\LettersController;
@@ -17,7 +19,8 @@ Route::get('/', [CarController::class, 'index'])->name('home');
 Route::get('/home', [CarController::class, 'index'])->name('home');
 Route::get('/home/catalogue', [CarController::class, 'catalogue'])->name('carCatalogue');
 Route::get('/car/{id}', [CarDetailsController::class, 'index'])->name('carDetailedView');
-Route::view('/contact', 'contact')->name('contactUs');
+Route::get('/contact', [ContactController::class, 'index'])->name('contactUs');
+Route::post('/contact/send', [MailController::class, 'send'])->name('sendMail');
 Route::view('/help', 'help')->name('help');
 
 // only authenticated can use this
@@ -43,12 +46,7 @@ Route::group(['middleware' => 'auth'], function () {
 
 
 /*
- * todo Insert (!!!!!!)
- * todo delete images from firebase as well (!!!!)
- * todo description detalur naxvaze (!!)
- * todo user profile update (!)
- *
- * todo merec mixedav
+ * todo delete images from firebase as well
  * todo (responsivnes: home page, car details, car catalogue[+], user profile)
  * todo dafavoriteba
  *

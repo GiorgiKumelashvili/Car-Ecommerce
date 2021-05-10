@@ -10059,11 +10059,16 @@ body {
 
 .custom-bg-img {
   background-image: url("https://wallpaperaccess.com/full/1554626.jpg");
-  height: 600px;
   background-repeat: no-repeat;
   background-size: cover;
+  height: 60vh;
 }
 
+@media only screen and (max-width: 650px) {
+  .custom-bg-img {
+    height: 28vh;
+  }
+}
 .card-img-overlay {
   background: linear-gradient(to right, rgba(0, 0, 0, 0.95) 40%, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.1));
 }

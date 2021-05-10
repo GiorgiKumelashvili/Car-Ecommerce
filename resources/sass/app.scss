@@ -17,9 +17,15 @@ body {
 
 .custom-bg-img {
     background-image: url($big-image-url);
-    height: 600px;
     background-repeat: no-repeat;
     background-size: cover;
+    height: 60vh;
+}
+
+@media only screen and (max-width: 650px) {
+    .custom-bg-img {
+        height: 28vh;
+    }
 }
 
 .card-img-overlay {

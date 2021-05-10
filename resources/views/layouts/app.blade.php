@@ -31,10 +31,9 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
 
-            <div class="collapse navbar-collapse d-flex" id="navbarSupportedContent">
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <!-- Left Side Of Navbar -->
                 <ul class="navbar-nav text-center flex-grow-1 justify-content-center font-weight-bold">
-
                     @foreach([
                         'home' => 'მთავარი',
                         'carCatalogue' => 'კატალოგი',

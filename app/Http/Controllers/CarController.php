@@ -10,7 +10,6 @@ use Illuminate\Support\Facades\DB;
 
 class CarController extends Controller {
     public function index(): Renderable {
-
         $hotDeals = DB::table('cars')
             ->orderBy('price_usd')
             ->where('price_usd', '>', '1000')
@@ -129,16 +128,4 @@ class CarController extends Controller {
         // return view
         return view('car.car_catalogue', ['cars' => $cars]);
     }
-
-    public function create() { }
-
-    public function store(Request $request) { }
-
-    public function show(Car $car) { }
-
-    public function edit(Car $car) { }
-
-    public function update(Request $request, Car $car) { }
-
-    public function destroy(Car $car) { }
 }
