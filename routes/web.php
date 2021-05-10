@@ -43,38 +43,8 @@ Route::group(['middleware' => 'auth'], function () {
     Route::put('/profile/edit', [ProfileController::class, 'update'])->name('profile.update');
 });
 
-
-
-/*
- * todo delete images from firebase as well
- * todo (responsivnes: home page, car details, car catalogue[+], user profile)
- * todo dafavoriteba
- *
- * em: giorgi@giorgi.com
- * ps: giorgi123
- *
- * https://www.myauto.ge/ka/
- * https://undraw.co/illustrations
- *
- * Bodystyle Search ro aris maqedan daascrape
- * https://www.cars.com/shopping/
- *
- * (top)
- * https://dribbble.com/shots/14756705-Carbase-Redesign-Car-shop
- *
- * (bottom)
- * https://dribbble.com/shots/14764444-Car-Catalogue-Carent-purple-ver
- */
-
-
-/*
 Route::get('/seed-users-temp', function () {
     $arr = [
-        [
-            "email" => "giorgi@giorgi.com",
-            "username" => "giorgi",
-            "password" => "giorgi123"
-        ],
         [
             "email" => "luka@luka.com",
             "username" => "luka",
@@ -132,4 +102,29 @@ Route::get('/seed-users-temp', function () {
     }
 
 });
+
+/*
+ * todo delete images from firebase as well
+ * todo (responsivnes: home page, car details, car catalogue[+], user profile)
+ * todo dafavoriteba
+ *
+ * em: giorgi@giorgi.com
+ * ps: giorgi123
+ *
+ * https://www.myauto.ge/ka/
+ * https://undraw.co/illustrations
+ *
+ * Bodystyle Search ro aris maqedan daascrape
+ * https://www.cars.com/shopping/
+ *
+ * (top)
+ * https://dribbble.com/shots/14756705-Carbase-Redesign-Car-shop
+ *
+ * (bottom)
+ * https://dribbble.com/shots/14764444-Car-Catalogue-Carent-purple-ver
+ */
+
+
+/*
+
  */
