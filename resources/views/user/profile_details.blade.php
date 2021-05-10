@@ -17,16 +17,13 @@
                        type="text"
                        name="name"
                        value="{{ $user->name }}"
-                       required
-                       autocomplete="name"
-                       autofocus
-                       class="form-control @error('name') is-invalid @enderror rounded-pill"
+                       class="form-control border quad-rounded-less rounded-pill {{$errors->has('name') ? "border-danger" : ""}}"
                 >
 
                 @error('name')
-                <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
+                <div class="text-danger pl-2">
+                    {{ $message }}
+                </div>
                 @enderror
             </div>
 
@@ -37,21 +34,16 @@
 
                 <input
                     id="email"
-                    required
-                    autofocus
                     type="text"
                     name="email"
                     value="{{ $user->email }}"
-                    autocomplete="email"
-                    class="form-control @error('name') is-invalid @enderror rounded-pill"
+                    class="form-control border quad-rounded-less rounded-pill {{$errors->has('email') ? "border-danger" : ""}}"
                 >
 
-                @error('name')
-                <span class="invalid-feedback" role="alert">
-                        <strong>
-                            {{ $message }}
-                        </strong>
-                    </span>
+                @error('email')
+                <div class="text-danger pl-2">
+                    {{ $message }}
+                </div>
                 @enderror
             </div>
 
