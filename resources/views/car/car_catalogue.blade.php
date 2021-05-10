@@ -249,12 +249,12 @@
                                     {{$car->name}}
                                 </h4>
 
-                                <img
-                                    src="{{$car->img_url}}"
-                                    style="object-fit: cover;"
-                                    class="card-img-top img-res"
-                                    alt="mercedes"
-                                >
+{{--                                <img--}}
+{{--                                    src="{{$car->img_url}}"--}}
+{{--                                    style="object-fit: cover;"--}}
+{{--                                    class="card-img-top img-res"--}}
+{{--                                    alt="mercedes"--}}
+{{--                                >--}}
 
                                 <div class="card-body">
                                     <div class="card-text d-flex justify-content-between">

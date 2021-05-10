@@ -2,12 +2,15 @@
 
 use App\Http\Controllers\CarDetailsController;
 use App\Http\Controllers\CarController;
+use App\Http\Controllers\profile\AnnouncmentsController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 
 Auth::routes();
+
+// without auth view
 Route::get('/', [CarController::class, 'index'])->name('home');
 Route::get('/home', [CarController::class, 'index'])->name('home');
 Route::get('/home/catalogue', [CarController::class, 'catalogue'])->name('carCatalogue');
@@ -15,14 +18,16 @@ Route::get('/car/{id}', [CarDetailsController::class, 'index'])->name('carDetail
 Route::view('/contact', 'contact')->name('contactUs');
 Route::view('/help', 'help')->name('help');
 
+// only authenticated can use this
+Route::group(['middleware' => 'auth'], function () {
+    Route::get('/profile/announcements', [AnnouncmentsController::class, 'index'])->name('announcements.index');
+    Route::get('/profile/announcements/create', [AnnouncmentsController::class, 'create'])->name('announcement.create');
+    Route::post('/profile/announcements', [AnnouncmentsController::class, 'store'])->name('announcement.store');
+    Route::get('/profile/announcements/create/images/{detailID}/{carID}', [AnnouncmentsController::class, 'createImages'])->name('announcement.create.images');
+    Route::delete('/profile/announcements/delete', [AnnouncmentsController::class, 'destroy'])->name('announcement.destroy');
 
-Route::group(['middleware' => 'auth'], function() {
-    Route::get('/profile/announcements', [ProfileController::class, 'announcements'])->name('announcements');
-    Route::get('/profile/announcements/add', [ProfileController::class, 'announcementAdd'])->name('announcement.add');
-    Route::post('/profile/announcements/delete', [ProfileController::class, 'announcementDelete'])->name('announcement.delete');
-
-    Route::get('/profile/details', [ProfileController::class, 'profileDetails'])->name('profile');
-    Route::post('/profile/details/edit', [ProfileController::class, 'profileEdit'])->name('profile.edit');
+    Route::get('/profile/edit', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::put('/profile/edit', [ProfileController::class, 'update'])->name('profile.update');
 });
 
 

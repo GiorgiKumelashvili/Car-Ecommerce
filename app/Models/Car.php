@@ -10,6 +10,8 @@ use Illuminate\Support\Facades\DB;
 /**
  * @method static where(string $string, $id)
  * @method static paginate(int $int)
+ * @method static create(string[] $array)
+ * @method static find(mixed $carID)
  */
 class Car extends Model {
     use HasFactory;

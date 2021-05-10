@@ -13,17 +13,17 @@
     <div class="row">
         @foreach ($cars as $car)
             <div class="col-12 col-md-6">
-                <div class="card quad-rounded-less shadow-sm mt-3" style="max-height: 35rem">
+                <div class="card quad-rounded-less shadow-sm mt-3" style="max-height: 38rem">
                     <h4 class="card-title font-weight-bold text-center m-0 py-4 px-4 text-truncate">
                         {{$car->name}}
                     </h4>
 
-                    {{--                    <img--}}
-                    {{--                        src="{{$car->img_url}}"--}}
-                    {{--                        style="object-fit: cover;"--}}
-                    {{--                        class="card-img-top img-res"--}}
-                    {{--                        alt="mercedes"--}}
-                    {{--                    >--}}
+                    <img
+                        src="{{$car->img_url}}"
+                        style="object-fit: cover;"
+                        class="card-img-top img-res"
+                        alt="mercedes"
+                    >
 
                     <div class="card-body">
                         <div class="card-text d-flex justify-content-between">
@@ -74,13 +74,14 @@
                         {{__('ჩაკეცვა')}}
                     </button>
 
-                    <form action="{{route('announcement.delete')}}" method="POST">
+                    <form action="{{route('announcement.destroy')}}" method="POST">
                         <input type="text" name="id" value="" id="deleteIdInput" class="text-hide">
 
                         <button type="submit" class="btn btn-danger">
                             {{__('დიახ')}}
                         </button>
 
+                        @method('DELETE')
                         @csrf
                     </form>
                 </div>

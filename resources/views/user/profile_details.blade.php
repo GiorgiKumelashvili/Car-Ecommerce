@@ -4,8 +4,9 @@
     <h1 class="text-center">{{__('პროფილის რედაქტირება')}}</h1>
 
     <div class="p-5">
-        <form method="POST" action="{{ route('profile.edit') }}">
+        <form method="POST" action="{{ route('profile.update') }}">
             @csrf
+            @method('PUT')
 
             <div class="form-group pt-4">
                 <label for="name">

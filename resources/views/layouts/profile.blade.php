@@ -53,35 +53,35 @@
                                 </div>
                             </li>
 
-                            <a href="{{route('announcements')}}"
+                            <a href="{{route('announcements.index')}}"
                                class="text-decoration-none text-dark list-group-item border-0">
                                 {{__('ჩემი განცხადებები')}}
                             </a>
 
-                            <a href="{{route('announcement.add')}}"
+                            <a href="{{route('announcement.create')}}"
                                class="text-decoration-none text-dark list-group-item border-0">
                                 {{__('დაამატეთ განცხადებები')}}
                             </a>
 
-                            <a href="{{route('profile')}}"
+                            <a href=""
                                class="text-decoration-none text-dark list-group-item border-0"
                             >
                                 {{__('ფეივორიტები')}}
                             </a>
 
-                            <a href="{{route('profile')}}"
+                            <a href=""
                                class="text-decoration-none text-dark list-group-item border-0"
                             >
                                 {{__('ჩემი წერილები')}}
                             </a>
 
-                            <a href="{{route('profile')}}"
+                            <a href=""
                                class="text-decoration-none text-dark list-group-item border-0"
                             >
                                 {{__('ბალანსის შევსება')}}
                             </a>
 
-                            <a href="{{route('profile')}}"
+                            <a href="{{route('profile.edit')}}"
                                class="text-decoration-none text-dark list-group-item border-0"
                             >
                                 {{__('პროფილის რედაქტირება')}}
@@ -112,13 +112,14 @@
                 </div>
 
                 <div class="col-9 bg-light quad-rounded-less shadow p-4">
-                    {{-- Car profile page --}}
                     @if(in_array(request()->route()->getName(), [
-                        'announcements','profile','announcement.add'
+                        'announcements.index','profile.edit','announcement.create',
+                        'announcement.create.images'
                     ]))
+                        {{-- Car profile page --}}
                         @yield('profile_content')
-                    {{-- Car profile error page --}}
                     @else
+                        {{-- Car profile error page --}}
                         <h1 class="text-black-50">{{__('გვერდი მალე დაემატება')}}</h1>
                     @endif
                 </div>

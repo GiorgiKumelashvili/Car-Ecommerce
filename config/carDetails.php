@@ -1,5 +1,6 @@
 <?php
 return [
+    "no_image" => "https://firebasestorage.googleapis.com/v0/b/car-ecommerce.appspot.com/o/util_images%2Fno-car.jpg?alt=media&token=34949b43-59ac-41c8-aac9-60afaef0b466",
     "wheel_side" => [
         "მარჯვნივ",
         "მარცხნივ"
@@ -61,6 +62,12 @@ return [
         "მინივენი",
         "სედანი",
         "ჰეჩბექი"
+    ],
+    "color" => [
+        "წითელი",
+        "თეთრი",
+        "შავი",
+        "ლურჯი"
     ]
 ];
 
