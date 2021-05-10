@@ -8,7 +8,9 @@ use App\Http\Controllers\profile\AnnouncmentsController;
 use App\Http\Controllers\profile\FavouritesController;
 use App\Http\Controllers\profile\LettersController;
 use App\Http\Controllers\ProfileController;
+use App\Models\User;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Route;
 
 
@@ -93,7 +95,7 @@ Route::get('/seed-users-temp', function () {
     ];
 
 
-    foreach ($arr as $key => $value) {
+    foreach ($arr as $value) {
         User::create([
             'name' => $value['username'],
             'email' => $value['email'],
